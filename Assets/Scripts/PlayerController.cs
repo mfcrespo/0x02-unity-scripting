@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //Load scene
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +16,15 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 
+    }
+
+    void Update()
+    {
+        if (health == 0)
+        {
+            Debug.Log("Game Over!");
+            SceneManager.LoadScene("maze"); //load scene
+        }
     }
 
     // Update is called once per frame
