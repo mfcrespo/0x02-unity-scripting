@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     // variable that can be edited in the Inspector to easily modify the Player‘s speed
     public float speed = 300f;
     private int score = 0;
+    public int health = 5;
 
     //This is a reference to the Rigidbody component called "rb"
     public Rigidbody rb;
@@ -48,6 +49,12 @@ void OnTriggerEnter(Collider other)
             score += 1;
             Debug.Log($"Score: {score}");
             other.gameObject.SetActive(false);
-        }    
+        }
+        
+        if (other.tag == "Trap")
+        {
+            health -= 1;
+            Debug.Log($"Health: {health}");
+        }
     }
 }
