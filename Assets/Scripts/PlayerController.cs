@@ -56,5 +56,10 @@ void OnTriggerEnter(Collider other)
             health -= 1;
             Debug.Log($"Health: {health}");
         }
+
+        if (other.tag == "Goal")
+        {
+            Debug.Log("You Win!");
+        }        
     }
 }
